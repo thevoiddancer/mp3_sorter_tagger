@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "mp3-sorter-tagger"
+version = "0.1.0"
+description = ""
+authors = ["Tomislav Nazifović <tomislav.nazifovic@gmail.com>"]
+license = "GNU"
+readme = "README.md"
+packages = [{include = "mp3_sorter_tagger", from = "src"}]
+
+[tool.poetry.dependencies]
+python = "3.11.9"
+music-tag = "^0.4.3"
+ipython = "^8.26.0"
+ipykernel = "^6.29.5"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
