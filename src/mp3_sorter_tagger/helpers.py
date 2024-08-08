@@ -1,5 +1,29 @@
 import re
 
+STRIP_CHARS = " -_()[]"
+
+
+def extract_year(name):
+    pattern = r"^(?=.*\b(\d{4})\b)(?!.*\b\d{4}\b.*\b\d{4}\b).*"
+    name = name.strip(STRIP_CHARS)
+    year = re.findall(pattern, name)
+    if len(year) == 1:
+        year = year[0]
+        name = name.replace(year, "").strip(STRIP_CHARS)
+    else:
+        year = None
+    return year, name
+
+
+# TODO
+def extract_artist_name(name, artist):
+    pass
+
+
+# TODO
+def extract_album_type(name):
+    pass
+
 
 def check_album_has_year(dirname):
     return dirname[:4].isnumeric() or dirname[1:5].isnumeric()
